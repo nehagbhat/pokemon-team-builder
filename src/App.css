@@ -194,3 +194,71 @@ input:focus-visible {
   outline: 3px solid #2563eb;
   outline-offset: 3px;
 }
+
+.team-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.team-actions button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #b91c1c;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.team-actions button:hover:not(:disabled) {
+  background: #991b1b;
+}
+
+.team-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.team-analysis {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.analysis-group {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: white;
+}
+
+.analysis-group h4 {
+  margin-top: 0;
+}
+
+.analysis-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.analysis-group li {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.analysis-group strong {
+  font-size: 14px;
+}

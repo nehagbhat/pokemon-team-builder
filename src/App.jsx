@@ -17,17 +17,13 @@ function App() {
   const [selectedPokemon, setSelectedPokemon] = useState(null);
 
   function addToTeam(pokemon) {
-    const alreadyInTeam = team.some(
-      (member) => member.id === pokemon.id
-    );
-
-    if (alreadyInTeam) {
+    if (team.some((member) => member.id === pokemon.id)) {
       setMessage(`${pokemon.name} is already on your team.`);
       return;
     }
 
     if (team.length >= 6) {
-      setMessage("Your team is full. Remove a member before adding another.");
+      setMessage("Your team is full. Remove a member first.");
       return;
     }
 
@@ -41,6 +37,11 @@ function App() {
     );
 
     setMessage("Pokémon removed from your team.");
+  }
+
+  function replaceTeam(newTeam) {
+    setTeam(newTeam);
+    setMessage("Your random team is ready!");
   }
 
   return (
@@ -80,6 +81,7 @@ function App() {
                 team={team}
                 onRemoveFromTeam={removeFromTeam}
                 onViewDetails={setSelectedPokemon}
+                onReplaceTeam={replaceTeam}
               />
             }
           />
